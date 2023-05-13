@@ -23,10 +23,10 @@ let handleUserLogin = (email, password) => {
             if (isExist) {
                 // user already exists
                 let user = await db.User.findOne({
-                    attributes: ['email', 'roleId', 'password'],
+                    attributes: ['email', 'roleId', 'password', 'firstName', 'lastName'],
                     where: { email: email },
                     raw: true
-                })
+                });
                 if (user) {
                     // compare password
                     let check = await bcrypt.compareSync(password, user.password); // false
