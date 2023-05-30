@@ -2,8 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable('schadules', {
-
+        await queryInterface.createTable('schedules', {
             // key: DataTypes.STRING,
             // type: DataTypes.STRING,
             // value_en: DataTypes.STRING,
@@ -12,34 +11,34 @@ module.exports = {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
             },
             currentNumber: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
             },
             maxNumber: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
             },
             date: {
-                type: Sequelize.DATE
+                type: Sequelize.DATE,
             },
             timeType: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING,
             },
-            doctorld: {
-                type: Sequelize.INTEGER
+            doctorId: {
+                type: Sequelize.INTEGER,
             },
             createdAt: {
                 allowNull: false,
-                type: Sequelize.DATE
+                type: Sequelize.DATE,
             },
             updatedAt: {
                 allowNull: false,
-                type: Sequelize.DATE
-            }
+                type: Sequelize.DATE,
+            },
         });
     },
     async down(queryInterface, Sequelize) {
-        await queryInterface.dropTable('schadules');
-    }
+        await queryInterface.dropTable('schedules');
+    },
 };
