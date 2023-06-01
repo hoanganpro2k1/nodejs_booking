@@ -1,10 +1,10 @@
 const { Sequelize } = require('sequelize');
 
 // Option 3: Passing parameters separately (other dialects)
-const sequelize = new Sequelize('nodejs', 'root', null, {
+const sequelize = new Sequelize('bookingcare', 'root', null, {
     host: 'localhost',
     dialect: 'mysql',
-    logging: false
+    logging: false,
 });
 
 let connectDB = async () => {
@@ -14,6 +14,6 @@ let connectDB = async () => {
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
-}
+};
 
 module.exports = connectDB;
